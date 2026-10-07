@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="320" height="320" viewBox="0 0 320 320">
+  <!-- pola latar kalem: kepala Lotso, stroberi, hati, jejak kaki, kilau -->
+  <defs>
+    <!-- kepala Lotso: beruang pink, hidung ungu, jambul kecil di dahi -->
+    <g id="lotso">
+      <g stroke="#E9D8BC" stroke-width="1.6">
+        <circle cx="-24" cy="-21" r="12" fill="#E3AFC3"/>
+        <circle cx="24" cy="-21" r="12" fill="#E3AFC3"/>
+        <ellipse rx="31" ry="27" fill="#E3AFC3"/>
+      </g>
+      <circle cx="-24" cy="-21" r="6" fill="#C98AA5"/>
+      <circle cx="24" cy="-21" r="6" fill="#C98AA5"/>
+      <path d="M-5 -25 Q-2.5 -32 0 -26 Q2.5 -32 5 -25" fill="#E9BCD0" stroke="#C98AA5" stroke-width="1.2" stroke-linejoin="round"/>
+      <ellipse cy="9" rx="14" ry="10" fill="#F5DDE6"/>
+      <ellipse cy="4" rx="5.5" ry="3.8" fill="#8E5A9A"/>
+      <circle cx="-11" cy="-5" r="2.6" fill="#3E3239"/>
+      <circle cx="11" cy="-5" r="2.6" fill="#3E3239"/>
+      <path d="M-4.5 12.5 Q0 16 4.5 12.5" stroke="#3E3239" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+      <ellipse cx="-20" cy="6" rx="4.5" ry="3" fill="#E58FB2" opacity=".7"/>
+      <ellipse cx="20" cy="6" rx="4.5" ry="3" fill="#E58FB2" opacity=".7"/>
+    </g>
+    <!-- stroberi garis -->
+    <g id="berry" fill="none" stroke="#E9D8BC" stroke-width="1.4" stroke-linejoin="round">
+      <path d="M0 -10 C10 -10 13 -1 9 7 C6 13 1.5 16 0 16 C-1.5 16 -6 13 -9 7 C-13 -1 -10 -10 0 -10Z"/>
+      <path d="M-7 -10 L-3 -7 L0 -13 L3 -7 L7 -10"/>
+      <g fill="#E9D8BC" stroke="none"><circle cx="-3" cy="0" r=".9"/><circle cx="3.5" cy="2" r=".9"/><circle cx="0" cy="7" r=".9"/></g>
+    </g>
+    <!-- hati garis -->
+    <path id="heart" fill="none" stroke="#D9B8BF" stroke-width="1.4" stroke-linejoin="round" d="M0 6 C-6 0 -12 -2 -12 -7 C-12 -11 -8 -13 -5 -13 C-2 -13 0 -11 0 -9 C0 -11 2 -13 5 -13 C8 -13 12 -11 12 -7 C12 -2 6 0 0 6Z"/>
+    <!-- kilau 4 sudut -->
+    <path id="spark" fill="#E9D8BC" d="M0 -7 Q1 -1 7 0 Q1 1 0 7 Q-1 1 -7 0 Q-1 -1 0 -7Z"/>
+    <!-- jejak kaki beruang -->
+    <g id="paw" fill="#D9B8BF">
+      <ellipse cy="3" rx="6" ry="5"/>
+      <circle cx="-7" cy="-5" r="2.4"/><circle cx="-2.5" cy="-8.5" r="2.4"/>
+      <circle cx="2.5" cy="-8.5" r="2.4"/><circle cx="7" cy="-5" r="2.4"/>
+    </g>
+  </defs>
+
+  <g opacity=".17">
+    <use xlink:href="#lotso" href="#lotso" transform="translate(84 92) rotate(-9)"/>
+    <use xlink:href="#lotso" href="#lotso" transform="translate(240 236) rotate(11) scale(.72)"/>
+  </g>
+  <g opacity=".22">
+    <use xlink:href="#berry" href="#berry" transform="translate(236 74) rotate(14)"/>
+    <use xlink:href="#berry" href="#berry" transform="translate(72 248) rotate(-16) scale(.85)"/>
+    <use xlink:href="#heart" href="#heart" transform="translate(162 168) scale(.7)"/>
+    <use xlink:href="#heart" href="#heart" transform="translate(300 150) scale(.5)"/>
+    <use xlink:href="#heart" href="#heart" transform="translate(20 168) scale(.45)"/>
+    <use xlink:href="#paw" href="#paw" transform="translate(168 104) rotate(-20) scale(.7)"/>
+    <use xlink:href="#paw" href="#paw" transform="translate(150 286) rotate(18) scale(.55)"/>
+  </g>
+  <g opacity=".3">
+    <use xlink:href="#spark" href="#spark" transform="translate(158 36)"/>
+    <use xlink:href="#spark" href="#spark" transform="translate(300 300) scale(.7)"/>
+    <use xlink:href="#spark" href="#spark" transform="translate(24 30) scale(.6)"/>
+    <use xlink:href="#spark" href="#spark" transform="translate(268 150) scale(.5)"/>
+    <use xlink:href="#spark" href="#spark" transform="translate(110 196) scale(.5)"/>
+    <g fill="#E9D8BC"><circle cx="200" cy="128" r="1.6"/><circle cx="40" cy="120" r="1.4"/><circle cx="300" cy="60" r="1.4"/><circle cx="196" cy="300" r="1.6"/><circle cx="120" cy="300" r="1.2"/></g>
+  </g>
+</svg>

@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Untuk Pacarku Arraya Luthvia 🌙</title>
+<!-- urutan CSS jangan diubah: file bawah boleh menimpa file atas -->
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/gate.css">
+<link rel="stylesheet" href="css/book.css">
+<link rel="stylesheet" href="css/hero.css">
+<link rel="stylesheet" href="css/letter.css">
+<link rel="stylesheet" href="css/timeline.css">
+<link rel="stylesheet" href="css/reasons.css">
+<link rel="stylesheet" href="css/gallery.css">
+<link rel="stylesheet" href="css/video.css">
+<link rel="stylesheet" href="css/stats-wish.css">
+<link rel="stylesheet" href="css/closing-cake.css">
+<link rel="stylesheet" href="css/plushies.css">
+<link rel="stylesheet" href="css/reveal.css">
+</head>
+<body>
+
+<div id="progressBar"></div>
+<div id="petals"></div>
+
+<!-- ===================== MUSIK =====================
+  Taruh file lagu kamu di folder yang sama dengan index.html.
+  Nama file & judul diatur di CONFIG dalam script.js (musicFile, musicTitle).
+========================================================= -->
+<audio id="bgMusic" loop preload="auto"></audio>
+<div id="musicDock">
+  <button id="muteBtn" title="mute/unmute musik">♪</button>
+  <div id="visualizer"><span></span><span></span><span></span><span></span></div>
+  <div id="musicTitle"></div>
+</div>
+
+<!-- ===================== GATE / ENVELOPE (TAMPILAN AWAL) ===================== -->
+<div id="gate">
+ <div id="gateIntro">
+  <div class="eyebrow">sepucuk surat untuk</div>
+  <div class="envelope-wrap" id="envelopeWrap">
+    <div class="envelope" id="envelope">
+      <div class="letter-peek"></div>
+      <div class="env-body"></div>
+      <div class="env-flap"></div>
+      <div class="seal"><img src="Foto/bg.JPG" alt=""></div>
+    </div>
+  </div>
+  <div class="gate-name" id="gateName">Arraya Luthvia Rahmayadi</div>
+
+  <div class="gate-hint" id="gateHint">ketuk amplopnya, sayang</div>
+
+  <!-- hitung mundur: amplop terkunci sampai waktunya tiba (atur di CONFIG.unlockAt) -->
+  <div class="lock-countdown" id="lockCountdown" hidden>
+    <div class="lock-title">🔒 suratnya belum boleh dibuka</div>
+    <div class="lock-units">
+      <div><span id="cdDays">0</span><small>hari</small></div>
+      <div><span id="cdHours">00</span><small>jam</small></div>
+      <div><span id="cdMins">00</span><small>menit</small></div>
+      <div><span id="cdSecs">00</span><small>detik</small></div>
+    </div>
+    <div class="lock-note" id="lockNote"></div>
+  </div>
+ </div>
+
+ <!-- PIN: muncul setelah amplop dibuka -->
+ <div id="pinScreen" class="pin-screen">
+  <div class="pin-icon">📌</div>
+  <div class="eyebrow">satu langkah lagi</div>
+  <div class="pin-title">Masukkan PIN</div>
+  <div class="pin-hint" id="pinHint"></div>
+  <div class="pin-dots" id="pinDots"></div>
+  <div class="pin-msg" id="pinMsg"></div>
+  <div class="pin-keypad" id="pinKeypad"></div>
+ </div>
+</div>
+
+<!-- ===================== MAIN (BUKU) =====================
+  Tiap <div class="page"> = 1 halaman. Pindah halaman: geser ke samping,
+  tombol ‹ ›, atau panah kiri/kanan di keyboard.
+========================================================= -->
+<main class="book" id="book">
+
+  <div class="page"><div class="page-front">
+  <section class="hero">
+    <div id="stars"></div>
+    <div class="monogram" id="monogram"><img src="Foto/bg.JPG" alt="foto Arraya"></div>
+    <div class="eyebrow">selamat ulang tahun</div>
+    <h1 id="heroName">Arraya Luthvia<br>Rahmayadi</h1>
+    <p class="sub">Hari ini dunia sedikit lebih bercahaya, karena hari ini adalah harimu.</p>
+    <div class="date-tag" id="todayTag">— hari yang paling ditunggu —</div>
+    <div class="scroll-cue">geser ke samping<span class="bar"></span></div>
+  </section>
+  </div></div>
+
+  <div class="page"><div class="page-front">
+  <section class="section">
+    <div class="kicker reveal">surat kecil</div>
+    <h2 class="title reveal">Untuk kamu, sebelum apa pun</h2>
+    <div class="letter reveal">
+      <div id="letterBody"></div>
+      <div class="signoff" id="signoff"></div>
+    </div>
+  </section>
+  </div></div>
+
+  <div class="page"><div class="page-front">
+  <section class="section">
+    <div class="kicker reveal">cerita kita</div>
+    <h2 class="title reveal">Perjalanan sampai hari ini</h2>
+    <div class="timeline" id="timelineList"></div>
+  </section>
+  </div></div>
+
+  <div class="page"><div class="page-front">
+  <section class="section">
+    <div class="kicker reveal">alasan sederhana</div>
+    <h2 class="title reveal">Kenapa aku sayang kamu</h2>
+    <div class="reasons" id="reasonsGrid"></div>
+  </section>
+  </div></div>
+
+  <div class="page"><div class="page-front">
+  <section class="section">
+    <div class="kicker reveal">kenangan</div>
+    <h2 class="title reveal">Beberapa momen kita</h2>
+    <div class="carousel-wrap reveal">
+      <div class="carousel" id="carouselTrack"></div>
+      <button type="button" class="carousel-arrow prev" id="carouselPrev" aria-label="foto sebelumnya" hidden>‹</button>
+      <button type="button" class="carousel-arrow next" id="carouselNext" aria-label="foto berikutnya">›</button>
+      <div class="carousel-dots" id="carouselDots"></div>
+    </div>
+  </section>
+  </div></div>
+
+  <div class="page"><div class="page-front">
+  <section class="section">
+    <div class="kicker reveal">video kita</div>
+    <h2 class="title reveal">Momen paling bahagia</h2>
+    <div class="vplayer reveal" id="vplayer">
+      <video id="memoryVideo" playsinline preload="metadata"></video>
+      <button type="button" class="vp-big" id="vpBig" aria-label="putar video">▶</button>
+      <div class="vp-controls">
+        <div class="vp-progress" id="vpProgress">
+          <div class="vp-buffered" id="vpBuf"></div>
+          <div class="vp-played" id="vpPlayed"><span class="vp-knob"></span></div>
+        </div>
+        <div class="vp-row">
+          <button type="button" class="vp-btn" id="vpPlay" aria-label="putar">▶</button>
+          <div class="vp-time"><span id="vpCur">0:00</span> / <span id="vpDur">0:00</span></div>
+          <div class="vp-spacer"></div>
+          <button type="button" class="vp-btn" id="vpFull" aria-label="layar penuh">⛶</button>
+        </div>
+      </div>
+    </div>
+    <p class="vp-note reveal">lagunya istirahat dulu ya, tonton videonya sampai habis ♡</p>
+  </section>
+  </div></div>
+
+  <div class="page"><div class="page-front">
+  <section class="section">
+    <div class="kicker reveal">masih terus berjalan</div>
+    <h2 class="title reveal">Angka-angka kecil kita</h2>
+    <div class="stats">
+      <div class="counter-box reveal">
+        <div class="counter-number" id="counterNum">0</div>
+        <div class="counter-label">hari sudah kita berjalan bersama</div>
+      </div>
+      <div class="counter-box reveal">
+        <div class="counter-number" id="countdownNum">0</div>
+        <div class="counter-label" id="countdownLabel">hari menuju ulang tahunmu berikutnya</div>
+      </div>
+    </div>
+  </section>
+  </div></div>
+
+  <div class="page"><div class="page-front">
+  <section class="section closing">
+    <div class="kicker reveal" style="justify-content:center;">penutup</div>
+    <h2 class="title reveal">Terima kasih sudah ada</h2>
+    <p class="msg reveal" id="closingMsg"></p>
+
+    <!-- kue ulang tahun: ketuk kue / tombol untuk tiup lilin -->
+    <div class="cake-zone reveal">
+      <div class="cake-title">✦ make a wish, lalu tiup lilinnya ✦</div>
+      <div class="cake" id="cake" role="button" aria-label="tiup lilin">
+        <div class="candles">
+          <div class="candle"><span class="flame"></span><span class="smoke"></span></div>
+          <div class="candle"><span class="flame"></span><span class="smoke"></span></div>
+          <div class="candle"><span class="flame"></span><span class="smoke"></span></div>
+        </div>
+        <div class="tier top"></div>
+        <div class="tier bottom"></div>
+        <div class="plate"></div>
+      </div>
+      <button type="button" class="cake-btn" id="blowBtn">tiup lilinnya ♡</button>
+      <div class="cake-msg" id="cakeMsg"></div>
+      <audio id="cakeSong" preload="auto"></audio>
+    </div>
+
+    <div class="wish-box reveal">
+      <div class="wish-title">✦ toples harapan ✦</div>
+      <form class="wish-form" id="wishForm">
+        <input type="text" id="wishInput" placeholder="tulis satu harapan untuk tahun ini..." maxlength="80" autocomplete="off">
+        <button type="submit">lepas ke langit</button>
+      </form>
+      <div class="wish-sky" id="wishSky">
+        <div class="wish-hint" id="wishHint">harapan yang kamu tulis akan melayang di sini</div>
+      </div>
+    </div>
+
+    <footer>dibuat dengan sayang, untuk Arraya Luthvia Rahmayadi</footer>
+  </section>
+  </div></div>
+
+</main>
+
+<nav id="bookNav" aria-label="navigasi halaman">
+  <button type="button" id="prevPage" hidden><span class="next-arrow">‹</span><span id="prevLabel">kembali</span></button>
+  <div id="pageIndicator">1 / 9</div>
+  <button type="button" id="nextPage"><span id="nextLabel">lanjut</span><span class="next-arrow">›</span></button>
+</nav>
+
+<div id="burst"></div>
+
+<!-- config.js harus paling atas, main.js paling bawah -->
+<script src="js/config.js"></script>
+<script src="js/counters.js"></script>
+<script src="js/gate.js"></script>
+<script src="js/plushies.js"></script>
+<script src="js/book.js"></script>
+<script src="js/video.js"></script>
+<script src="js/typewriter.js"></script>
+<script src="js/effects.js"></script>
+<script src="js/wish-jar.js"></script>
+<script src="js/cake.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+/* --- flip reasons --- */
+.reasons{ display:grid; grid-template-columns:1fr 1fr 1fr; gap:16px; }
+@media(max-width:680px){ .reasons{ grid-template-columns:1fr 1fr; } }
+@media(max-width:420px){ .reasons{ grid-template-columns:1fr; } }
+.flip-card{ perspective:1000px; height:150px; cursor:pointer; }
+.flip-inner{ position:relative; width:100%; height:100%; transition: transform .6s cubic-bezier(.65,0,.35,1); transform-style:preserve-3d; }
+.flip-card.flipped .flip-inner{ transform: rotateY(180deg); }
+.flip-front,.flip-back{ position:absolute; inset:0; backface-visibility:hidden; border-radius:6px; border:1px solid var(--line); display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:14px; }
+.flip-front{ background: var(--panel); }
+.flip-front .num{ font-family:'Cormorant Garamond',serif; font-style:italic; font-size:15px; color:var(--gold); opacity:.7; margin-bottom:8px;}
+.flip-front .teaser{ font-family:'Cormorant Garamond', serif; font-style:italic; font-size:24px; color:var(--gold-soft); }
+.flip-front .tap{ margin-top:10px; font-size:10px; letter-spacing:1.5px; text-transform:uppercase; opacity:.4; }
+.flip-back{ background: linear-gradient(145deg, var(--plum-soft), var(--plum-mid)); transform: rotateY(180deg); font-size:13px; line-height:1.55; color:var(--cream); opacity:.95; font-weight:300; }

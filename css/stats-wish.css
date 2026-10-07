@@ -1,0 +1,30 @@
+/* --- stat cards (counter + countdown) --- */
+.stats{ display:grid; grid-template-columns:1fr 1fr; gap:18px; }
+@media(max-width:560px){ .stats{ grid-template-columns:1fr; } }
+.counter-box{ border:1px solid var(--line); border-radius:14px; padding:36px 24px; text-align:center; background: radial-gradient(circle at 50% 0%, rgba(243,199,122,0.12), transparent 60%), var(--panel); }
+.counter-number{ font-family:'Cormorant Garamond', serif; font-style:italic; font-weight:600; font-size:clamp(44px,9vw,80px); color:var(--gold-soft); line-height:1; }
+.counter-label{ margin-top:10px; font-size:12px; letter-spacing:2px; text-transform:uppercase; color:var(--cream); opacity:.6; }
+
+/* --- wish jar --- */
+.wish-box{ border:1px solid var(--line); border-radius:14px; background: var(--panel); padding:34px 28px; position:relative; overflow:hidden; }
+.wish-form{ display:flex; gap:10px; flex-wrap:wrap; }
+.wish-form input{
+  flex:1; min-width:200px; background: rgba(255,255,255,0.04); border:1px solid var(--line); border-radius:999px;
+  padding:12px 18px; color:var(--cream); font-family:'Jost'; font-size:14px; outline:none;
+}
+.wish-form input::placeholder{ color:var(--cream); opacity:.4; }
+.wish-form input:focus{ border-color:var(--gold); }
+.wish-form button{
+  background: linear-gradient(120deg, var(--gold), var(--blush)); border:none; border-radius:999px;
+  padding:12px 26px; font-size:12px; letter-spacing:1.5px; text-transform:uppercase; font-weight:600;
+  color:var(--plum-deep); cursor:pointer; transition:transform .2s ease;
+}
+.wish-form button:hover{ transform:translateY(-2px); }
+.wish-sky{ position:relative; height:150px; margin-top:20px; overflow:hidden; border-top:1px dashed var(--line); }
+.wish-hint{ position:absolute; inset:0; display:flex; align-items:center; justify-content:center; font-size:12px; color:var(--cream); opacity:.35; letter-spacing:1px; text-align:center; padding:0 20px; }
+.wish-bubble{
+  position:absolute; bottom:-30px; background: rgba(212,175,106,0.12); border:1px solid var(--line);
+  color:var(--gold-soft); padding:8px 16px; border-radius:999px; font-size:12.5px; white-space:nowrap;
+  animation: floatUp 6s linear forwards;
+}
+@keyframes floatUp{ 0%{ transform:translateY(0) translateX(0); opacity:0; } 10%{opacity:1;} 100%{ transform:translateY(-180px) translateX(var(--drift,10px)); opacity:0; } }

@@ -1,0 +1,103 @@
+/* ================= BUKU (halaman geser ke samping + efek kertas) ================= */
+body{ overflow:hidden; }
+.book{ position:fixed; inset:0; z-index:1; perspective:2200px; overflow:hidden; }
+.page{
+  position:absolute; inset:0;
+  transform-origin:left center; transform-style:preserve-3d;
+  transition: transform 1.1s cubic-bezier(.645,.045,.355,1);
+}
+/* halaman yang sudah dibalik: berputar ke kiri seperti kertas buku */
+.page.turned{ transform: rotateY(-180deg); }
+.page-front,.page-back,.page-shade{
+  position:absolute; inset:0;
+  backface-visibility:hidden; -webkit-backface-visibility:hidden;
+}
+.page-front{
+  overflow-y:auto; overflow-x:hidden; display:flex; flex-direction:column;
+  background: var(--cute-bg); background-size: var(--cute-bg-size);
+  box-shadow: inset 16px 0 30px -20px rgba(0,0,0,0.75);
+  -webkit-overflow-scrolling:touch; scrollbar-width:none;
+}
+.page-front::-webkit-scrollbar{ display:none; }
+.page-front > section{ margin:auto; width:100%; }
+/* bayangan kertas saat dibalik */
+.page-shade{
+  pointer-events:none;
+  background: linear-gradient(to left, rgba(0,0,0,0.6), rgba(0,0,0,0.15) 45%, transparent 75%);
+  opacity:0; transition: opacity .55s ease;
+}
+.page.turning .page-shade{ opacity:1; }
+/* sisi belakang kertas (terlihat sekilas saat halaman berputar) */
+.page-back{
+  transform: rotateY(180deg);
+  background:
+    linear-gradient(to left, rgba(0,0,0,0.35), transparent 12%),
+    repeating-linear-gradient(0deg, transparent 0 31px, rgba(122,101,112,0.12) 31px 32px),
+    linear-gradient(to right, #ddd0c6, #f4ece4 35%, #f0e6dd 85%, #d6c8bd);
+}
+
+#bookNav{
+  position:fixed; left:50%; bottom: calc(16px + env(safe-area-inset-bottom, 0px)); transform:translateX(-50%);
+  z-index:45; display:flex; align-items:center; gap:12px;
+  padding:6px 8px; border-radius:999px; border:1px solid var(--line);
+  background: rgba(35,21,37,0.82); backdrop-filter: blur(6px);
+}
+#bookNav button{
+  width:38px; height:38px; border-radius:50%; border:1px solid var(--line);
+  background:transparent; color:var(--gold-soft); font-size:22px; line-height:1; cursor:pointer;
+  transition: background .2s ease, opacity .2s ease, transform .15s ease;
+}
+#bookNav button:hover:not(:disabled){ background: rgba(212,175,106,0.15); }
+#bookNav button:active:not(:disabled){ transform:scale(0.92); }
+#bookNav button:disabled{ opacity:.25; cursor:default; }
+/* tombol next: berisi judul lembar berikutnya, berkilau saat bisa ditekan */
+#bookNav{ padding:6px 6px 6px 16px; }
+#bookNav #nextPage{
+  position:relative; width:auto; height:40px; padding:0 14px 0 18px; border-radius:999px;
+  display:flex; align-items:center; gap:8px;
+  font-family:'Jost', sans-serif; font-size:12.5px; font-weight:600; letter-spacing:1.5px; text-transform:uppercase;
+  max-width:62vw; white-space:nowrap;
+}
+#bookNav #nextPage[hidden]{ display:none; }
+/* tombol kembali (muncul setelah sampai lembar terakhir) */
+#bookNav #prevPage{
+  width:auto; height:40px; padding:0 16px 0 12px; border-radius:999px;
+  display:flex; align-items:center; gap:8px;
+  font-family:'Jost', sans-serif; font-size:12px; font-weight:500; letter-spacing:1.5px; text-transform:uppercase;
+  max-width:42vw; white-space:nowrap; animation: pinIn .5s ease both;
+}
+#bookNav #prevPage[hidden]{ display:none; }
+#bookNav:has(#prevPage:not([hidden])){ padding-left:6px; }
+#bookNav:has(#nextPage[hidden]){ padding-right:16px; }
+#prevLabel{ overflow:hidden; text-overflow:ellipsis; }
+#bookNav #nextPage:disabled{ opacity:.55; }
+#nextLabel{ overflow:hidden; text-overflow:ellipsis; }
+#nextPage .next-arrow{ font-size:20px; line-height:1; margin-top:-2px; }
+#nextPage:not(:disabled){
+  color:var(--plum-deep); border-color:transparent;
+  background: linear-gradient(120deg, var(--gold), var(--gold-soft), var(--blush));
+  background-size:200% 200%;
+  animation: nextGlow 2s ease-in-out infinite, nextShimmer 3s linear infinite;
+}
+#bookNav #nextPage:not(:disabled):hover{ background: linear-gradient(120deg, var(--gold), var(--gold-soft), var(--blush)); background-size:200% 200%; }
+#nextPage:not(:disabled)::before,
+#nextPage:not(:disabled)::after{
+  content:'✦'; position:absolute; font-size:11px; color:var(--gold-soft); pointer-events:none;
+  text-shadow:0 0 6px var(--gold);
+  animation: nextTwinkle 1.6s ease-in-out infinite;
+}
+#nextPage:not(:disabled)::before{ top:-9px; right:-6px; }
+#nextPage:not(:disabled)::after{ bottom:-7px; left:-7px; font-size:8px; animation-delay:.8s; }
+#nextPage.just-ready{ animation: nextGlow .6s ease-in-out 4, nextShimmer 3s linear infinite; }
+@keyframes nextGlow{
+  0%,100%{ box-shadow: 0 0 6px rgba(214,185,140,0.45), 0 0 0 0 rgba(214,185,140,0.45); }
+  50%{ box-shadow: 0 0 18px rgba(233,216,188,0.95), 0 0 0 7px rgba(214,185,140,0); }
+}
+@keyframes nextShimmer{ 0%{ background-position:0% 50%; } 50%{ background-position:100% 50%; } 100%{ background-position:0% 50%; } }
+@keyframes nextTwinkle{
+  0%,100%{ opacity:0; transform:scale(.4) rotate(0deg); }
+  50%{ opacity:1; transform:scale(1.2) rotate(90deg); }
+}
+
+#pageIndicator{ font-family:'Cormorant Garamond', serif; font-style:italic; font-size:16px; color:var(--gold-soft); min-width:52px; text-align:center; }
+

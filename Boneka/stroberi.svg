@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 130">
+  <!-- stroberi imut berwajah -->
+  <ellipse cx="60" cy="124" rx="34" ry="5" fill="#3A0F2C" opacity=".16"/>
+  <path d="M60 30 C98 30 108 62 92 92 C82 110 68 120 60 120 C52 120 38 110 28 92 C12 62 22 30 60 30Z" fill="#EF4F74"/>
+  <path d="M60 30 C80 30 92 42 94 58 C80 44 40 44 26 58 C28 42 40 30 60 30Z" fill="#F7708F" opacity=".7"/>
+  <path d="M32 30 L46 38 L52 16 L60 34 L68 16 L74 38 L88 30 L78 46 L42 46Z" fill="#6DBF73"/>
+  <path d="M60 16 Q62 6 70 4" stroke="#4E9A55" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <g fill="#FFE7A8">
+    <ellipse cx="36" cy="66" rx="2" ry="3"/><ellipse cx="84" cy="66" rx="2" ry="3"/>
+    <ellipse cx="44" cy="94" rx="2" ry="3"/><ellipse cx="76" cy="94" rx="2" ry="3"/>
+    <ellipse cx="60" cy="106" rx="2" ry="3"/><ellipse cx="60" cy="56" rx="2" ry="3"/>
+  </g>
+  <circle cx="48" cy="74" r="4.5" fill="#2B1626"/><circle cx="49.5" cy="72.5" r="1.5" fill="#fff"/>
+  <circle cx="72" cy="74" r="4.5" fill="#2B1626"/><circle cx="73.5" cy="72.5" r="1.5" fill="#fff"/>
+  <path d="M54 82 Q60 88 66 82" stroke="#2B1626" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+  <ellipse cx="40" cy="82" rx="6" ry="4" fill="#FFB0C8" opacity=".75"/>
+  <ellipse cx="80" cy="82" rx="6" ry="4" fill="#FFB0C8" opacity=".75"/>
+</svg>

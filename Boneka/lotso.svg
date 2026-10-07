@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 230">
+  <!-- beruang pink stroberi duduk (ala Lotso) memeluk stroberi -->
+  <defs>
+    <radialGradient id="fur" cx="45%" cy="35%" r="75%">
+      <stop offset="0" stop-color="#F8BCD6"/>
+      <stop offset="1" stop-color="#DD82AC"/>
+    </radialGradient>
+  </defs>
+  <ellipse cx="100" cy="222" rx="72" ry="7" fill="#3A0F2C" opacity=".18"/>
+
+  <!-- tangan kiri -->
+  <ellipse cx="52" cy="152" rx="17" ry="30" transform="rotate(28 52 152)" fill="url(#fur)"/>
+  <!-- badan -->
+  <ellipse cx="100" cy="160" rx="54" ry="52" fill="url(#fur)"/>
+  <ellipse cx="100" cy="168" rx="32" ry="31" fill="#FAD3E3"/>
+  <path transform="translate(100 166) scale(.9)" d="M0 6 C-6 0 -12 -2 -12 -7 C-12 -11 -8 -13 -5 -13 C-2 -13 0 -11 0 -9 C0 -11 2 -13 5 -13 C8 -13 12 -11 12 -7 C12 -2 6 0 0 6Z" fill="#F06FA6"/>
+  <!-- kaki -->
+  <ellipse cx="64" cy="204" rx="25" ry="17" fill="url(#fur)"/>
+  <ellipse cx="136" cy="204" rx="25" ry="17" fill="url(#fur)"/>
+  <ellipse cx="64" cy="205" rx="13" ry="10" fill="#FAD3E3"/>
+  <ellipse cx="136" cy="205" rx="13" ry="10" fill="#FAD3E3"/>
+  <!-- stroberi dipeluk -->
+  <g transform="translate(150 176) rotate(12) scale(1.15)">
+    <path d="M0 -14 C14 -14 18 -2 12 10 C8 18 2 22 0 22 C-2 22 -8 18 -12 10 C-18 -2 -14 -14 0 -14Z" fill="#EF4F74"/>
+    <path d="M-10 -14 L-4 -10 L0 -19 L4 -10 L10 -14 L6 -7 L-6 -7Z" fill="#6DBF73"/>
+    <g fill="#FFE7A8"><ellipse cx="-5" cy="-2" rx="1.3" ry="2"/><ellipse cx="5" cy="0" rx="1.3" ry="2"/><ellipse cx="0" cy="8" rx="1.3" ry="2"/><ellipse cx="-6" cy="11" rx="1.3" ry="2"/><ellipse cx="6" cy="12" rx="1.3" ry="2"/></g>
+  </g>
+  <!-- tangan kanan -->
+  <ellipse cx="146" cy="150" rx="16" ry="27" transform="rotate(-35 146 150)" fill="url(#fur)"/>
+  <circle cx="140" cy="170" r="12" fill="url(#fur)"/>
+
+  <!-- telinga -->
+  <circle cx="54" cy="40" r="22" fill="url(#fur)"/><circle cx="54" cy="40" r="12" fill="#D9719F"/>
+  <circle cx="146" cy="40" r="22" fill="url(#fur)"/><circle cx="146" cy="40" r="12" fill="#D9719F"/>
+  <!-- kepala -->
+  <ellipse cx="100" cy="82" rx="60" ry="52" fill="url(#fur)"/>
+  <path d="M90 34 Q95 22 100 33 Q105 22 110 34" fill="#F3A9C9" stroke="#DD82AC" stroke-width="2" stroke-linejoin="round"/>
+  <!-- moncong + hidung ungu -->
+  <ellipse cx="100" cy="102" rx="28" ry="20" fill="#FAD3E3"/>
+  <ellipse cx="100" cy="92" rx="12" ry="8.5" fill="#7B3F8C"/>
+  <ellipse cx="96" cy="89" rx="4" ry="2.2" fill="#fff" opacity=".6"/>
+  <path d="M100 100 V104 M90 105 Q100 114 110 105" stroke="#3A1F33" stroke-width="2.6" fill="none" stroke-linecap="round"/>
+  <!-- mata + alis -->
+  <circle cx="76" cy="76" r="7" fill="#2B1626"/><circle cx="78.5" cy="73.5" r="2.4" fill="#fff"/>
+  <circle cx="124" cy="76" r="7" fill="#2B1626"/><circle cx="126.5" cy="73.5" r="2.4" fill="#fff"/>
+  <path d="M68 63 Q76 58 84 63 M116 63 Q124 58 132 63" stroke="#B85688" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <!-- pipi -->
+  <ellipse cx="62" cy="98" rx="9" ry="6" fill="#F06FA6" opacity=".45"/>
+  <ellipse cx="138" cy="98" rx="9" ry="6" fill="#F06FA6" opacity=".45"/>
+</svg>

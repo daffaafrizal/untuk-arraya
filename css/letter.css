@@ -1,0 +1,21 @@
+/* --- letter --- */
+/* panel lembut di belakang teks supaya tetap terbaca di atas pola lucu */
+.letter,.timeline,.counter-box,.wish-box{ backdrop-filter: blur(3px); -webkit-backdrop-filter: blur(3px); }
+.timeline{ background: var(--panel); border:1px solid var(--line); border-radius:14px; padding:30px 26px 30px 54px; }
+.timeline::before{ left:31px; top:36px; bottom:36px; }
+.letter{ background: var(--panel); border:1px solid var(--line); border-radius:6px; padding: 44px 38px; position:relative; }
+.letter::before{ content:'\201C'; position:absolute; top:-6px; left:20px; font-family:'Cormorant Garamond',serif; font-size:80px; color:var(--gold); opacity:.35; }
+.letter p{ font-size:17px; line-height:1.9; color:var(--cream); opacity:.92; margin-bottom:18px; font-weight:300; }
+.letter .signoff{ margin-top:26px; font-family:'Caveat', cursive; font-size:30px; color:var(--gold-soft); }
+
+/* --- efek mengetik surat --- */
+.tw-rest{ visibility:hidden; }
+.tw-caret{ display:none; }
+.tw-caret.on{
+  display:inline-block; width:2px; height:1.05em; margin:0 1px -0.15em;
+  background:var(--gold-soft); animation: caretBlink .8s steps(1) infinite;
+}
+@keyframes caretBlink{ 50%{ opacity:0; } }
+.tw-signoff{ opacity:0; transform:translateY(8px); transition: opacity .8s ease, transform .8s ease; }
+.tw-signoff.show{ opacity:1; transform:none; }
+.letter{ cursor:default; }

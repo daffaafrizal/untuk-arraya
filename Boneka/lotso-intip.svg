@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 150">
+  <!-- beruang pink mengintip dari tepi (tangan di bawah) -->
+  <defs>
+    <radialGradient id="fur" cx="45%" cy="35%" r="75%">
+      <stop offset="0" stop-color="#F8BCD6"/>
+      <stop offset="1" stop-color="#DD82AC"/>
+    </radialGradient>
+  </defs>
+  <circle cx="52" cy="38" r="22" fill="url(#fur)"/><circle cx="52" cy="38" r="12" fill="#D9719F"/>
+  <circle cx="148" cy="38" r="22" fill="url(#fur)"/><circle cx="148" cy="38" r="12" fill="#D9719F"/>
+  <ellipse cx="100" cy="84" rx="62" ry="56" fill="url(#fur)"/>
+  <ellipse cx="100" cy="104" rx="28" ry="20" fill="#FAD3E3"/>
+  <ellipse cx="100" cy="94" rx="12" ry="8.5" fill="#7B3F8C"/>
+  <ellipse cx="96" cy="91" rx="4" ry="2.2" fill="#fff" opacity=".6"/>
+  <path d="M100 102 V106 M91 107 Q100 115 109 107" stroke="#3A1F33" stroke-width="2.6" fill="none" stroke-linecap="round"/>
+  <!-- mata berkedip satu -->
+  <circle cx="76" cy="78" r="7" fill="#2B1626"/><circle cx="78.5" cy="75.5" r="2.4" fill="#fff"/>
+  <path d="M117 79 Q124 72 131 79" stroke="#2B1626" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <ellipse cx="62" cy="100" rx="9" ry="6" fill="#F06FA6" opacity=".45"/>
+  <ellipse cx="138" cy="100" rx="9" ry="6" fill="#F06FA6" opacity=".45"/>
+  <!-- tangan memegang tepi -->
+  <ellipse cx="50" cy="140" rx="22" ry="14" fill="url(#fur)"/>
+  <ellipse cx="150" cy="140" rx="22" ry="14" fill="url(#fur)"/>
+  <path d="M40 136 V144 M50 135 V145 M60 136 V144 M140 136 V144 M150 135 V145 M160 136 V144" stroke="#C96B98" stroke-width="2" stroke-linecap="round"/>
+  <path transform="translate(176 22) scale(.8)" d="M0 6 C-6 0 -12 -2 -12 -7 C-12 -11 -8 -13 -5 -13 C-2 -13 0 -11 0 -9 C0 -11 2 -13 5 -13 C8 -13 12 -11 12 -7 C12 -2 6 0 0 6Z" fill="#FF8FB8"/>
+</svg>

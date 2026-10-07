@@ -1,0 +1,43 @@
+/* ================= MAIN CONTENT ================= */
+.section{ max-width:780px; margin:0 auto; padding: 80px 28px 110px; position:relative; }
+
+.divider{ display:flex; align-items:center; justify-content:center; gap:14px; opacity:.5; margin: 0 auto; max-width:780px; padding:0 28px; }
+.divider::before,.divider::after{ content:''; flex:1; height:1px; background:linear-gradient(90deg, transparent, var(--gold), transparent); }
+.divider span{ font-size:13px; color:var(--gold); }
+
+.hero{
+  min-height:100%; display:flex; flex-direction:column; align-items:center; justify-content:center;
+  text-align:center; padding: 40px 28px 140px; position:relative;
+}
+.page-front > .hero{ margin:0; flex:1; }
+.monogram{
+  width:64px; height:64px; border:1px solid var(--line); border-radius:50%;
+  display:flex; align-items:center; justify-content:center; margin-bottom:22px;
+  font-family:'Cormorant Garamond', serif; font-style:italic; font-size:22px; color:var(--gold-soft);
+  background: radial-gradient(circle, rgba(212,175,106,0.08), transparent 70%);
+  position:relative; z-index:1;
+  width:clamp(140px, 36vw, 180px); height:clamp(140px, 36vw, 180px); padding:4px; overflow:hidden;
+  border-color: var(--gold); box-shadow: 0 0 28px rgba(212,175,106,0.25);
+}
+.monogram img{ width:100%; height:100%; object-fit:cover; border-radius:50%; display:block; }
+.hero .eyebrow{ margin-bottom:22px; position:relative; z-index:1; }
+.hero h1{
+  font-family:'Cormorant Garamond', serif; font-style:italic; font-weight:500;
+  font-size:clamp(42px,9vw,84px); line-height:1.05; position:relative; z-index:1;
+  background: linear-gradient(120deg, var(--cream), var(--gold-soft) 55%, var(--blush));
+  -webkit-background-clip:text; background-clip:text; color:transparent;
+  filter: drop-shadow(0 3px 8px rgba(30,22,27,0.5));
+}
+.hero .sub{ margin-top:22px; font-size:15px; letter-spacing:1px; color:var(--cream); opacity:.7; max-width:420px; position:relative; z-index:1; }
+.hero .date-tag{
+  margin-top:40px; font-size:12px; letter-spacing:3px; text-transform:uppercase; color:var(--gold-soft);
+  border-top:1px solid var(--line); border-bottom:1px solid var(--line); padding: 10px 0; opacity:.75; position:relative; z-index:1;
+}
+.scroll-cue{ position:absolute; bottom:86px; left:50%; transform:translateX(-50%); font-size:11px; letter-spacing:2px; text-transform:uppercase; color:var(--gold-soft); opacity:.6; display:flex; align-items:center; gap:10px; z-index:1; white-space:nowrap; }
+.scroll-cue .bar{ width:32px; height:1px; background:linear-gradient(90deg, var(--gold), transparent); animation: pulse 1.8s ease-in-out infinite, nudge 1.8s ease-in-out infinite; }
+@keyframes nudge{ 0%,100%{ transform:translateX(0);} 50%{ transform:translateX(6px);} }
+@keyframes pulse{ 0%,100%{opacity:.3} 50%{opacity:1} }
+
+.kicker{ font-size:11px; letter-spacing:4px; text-transform:uppercase; color:var(--gold); margin-bottom:14px; display:flex; align-items:center; gap:10px; }
+.kicker::before{ content:''; width:24px; height:1px; background:var(--gold); display:inline-block; }
+h2.title{ font-family:'Cormorant Garamond', serif; font-style:italic; font-weight:500; font-size:clamp(30px,5vw,46px); margin-bottom:34px; color:var(--cream); }

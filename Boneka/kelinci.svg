@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 220">
+  <!-- boneka kelinci putih-lavender dengan pita pink -->
+  <ellipse cx="80" cy="213" rx="56" ry="6" fill="#3A0F2C" opacity=".18"/>
+  <ellipse cx="56" cy="52" rx="15" ry="44" transform="rotate(-12 56 52)" fill="#F4ECF8"/>
+  <ellipse cx="56" cy="56" rx="7" ry="32" transform="rotate(-12 56 56)" fill="#F9B4CF"/>
+  <ellipse cx="104" cy="52" rx="15" ry="44" transform="rotate(12 104 52)" fill="#F4ECF8"/>
+  <ellipse cx="104" cy="56" rx="7" ry="32" transform="rotate(12 104 56)" fill="#F9B4CF"/>
+  <!-- pita -->
+  <g transform="translate(108 26) rotate(15)">
+    <path d="M0 0 L-16 -9 L-16 9Z M0 0 L16 -9 L16 9Z" fill="#F0609A"/>
+    <circle r="4.5" fill="#FF8FB8"/>
+  </g>
+  <!-- badan -->
+  <ellipse cx="80" cy="170" rx="42" ry="40" fill="#F4ECF8"/>
+  <ellipse cx="80" cy="176" rx="24" ry="24" fill="#FFFFFF"/>
+  <ellipse cx="44" cy="160" rx="12" ry="20" transform="rotate(25 44 160)" fill="#ECE0F2"/>
+  <ellipse cx="116" cy="160" rx="12" ry="20" transform="rotate(-25 116 160)" fill="#ECE0F2"/>
+  <ellipse cx="54" cy="204" rx="19" ry="12" fill="#ECE0F2"/>
+  <ellipse cx="106" cy="204" rx="19" ry="12" fill="#ECE0F2"/>
+  <ellipse cx="54" cy="205" rx="9" ry="6" fill="#F9B4CF"/>
+  <ellipse cx="106" cy="205" rx="9" ry="6" fill="#F9B4CF"/>
+  <!-- kepala -->
+  <circle cx="80" cy="108" r="44" fill="#F4ECF8"/>
+  <circle cx="64" cy="104" r="5.5" fill="#2B1626"/><circle cx="66" cy="102" r="1.8" fill="#fff"/>
+  <circle cx="96" cy="104" r="5.5" fill="#2B1626"/><circle cx="98" cy="102" r="1.8" fill="#fff"/>
+  <path d="M76 114 L84 114 L80 119Z" fill="#F0609A"/>
+  <path d="M80 119 Q75 125 70 121 M80 119 Q85 125 90 121" stroke="#3A1F33" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <ellipse cx="52" cy="118" rx="8" ry="5" fill="#F79CC0" opacity=".6"/>
+  <ellipse cx="108" cy="118" rx="8" ry="5" fill="#F79CC0" opacity=".6"/>
+</svg>

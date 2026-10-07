@@ -1,0 +1,143 @@
+/* --- closing --- */
+.closing{ text-align:center; }
+.closing p.msg{ font-size:16px; line-height:1.85; color:var(--cream); opacity:.85; max-width:540px; margin:0 auto 34px; font-weight:300; }
+.closing .wish-box{ margin:0 auto 40px; max-width:560px; text-align:left; }
+.wish-title{ text-align:center; font-size:11px; letter-spacing:4px; text-transform:uppercase; color:var(--gold); margin-bottom:16px; }
+
+footer{ text-align:center; padding: 50px 20px 0; font-size:12px; letter-spacing:2px; color:var(--cream); opacity:.4; }
+
+/* ================= KUE ULANG TAHUN ================= */
+.cake-zone{ display:flex; flex-direction:column; align-items:center; margin:10px auto 44px; }
+.cake-title{ font-size:11px; letter-spacing:4px; text-transform:uppercase; color:var(--gold); margin-bottom:6px; }
+
+.cake{ position:relative; width:240px; height:210px; cursor:pointer; -webkit-tap-highlight-color:transparent; }
+/* cahaya lilin di sekitar kue, hilang saat lilin padam */
+.cake::before{
+  content:''; position:absolute; left:50%; top:-20px; width:300px; height:220px; transform:translateX(-50%);
+  background: radial-gradient(ellipse at 50% 30%, rgba(255,205,120,0.2), transparent 65%);
+  pointer-events:none; transition: opacity 1s ease;
+}
+.cake.blown::before{ opacity:0; }
+
+.plate{
+  position:absolute; bottom:0; left:50%; transform:translateX(-50%);
+  width:236px; height:16px; border-radius:50%;
+  background: linear-gradient(180deg, var(--gold-soft), var(--gold));
+  box-shadow: 0 12px 26px rgba(20,14,18,0.4);
+}
+
+.tier{ position:absolute; left:50%; transform:translateX(-50%); border-radius:12px 12px 6px 6px; overflow:hidden; }
+.tier.bottom{
+  bottom:9px; width:196px; height:66px;
+  background: linear-gradient(180deg, #F4E9DF, #E3CEC3);
+  box-shadow: inset 0 -8px 14px rgba(120,90,100,0.18);
+}
+.tier.top{
+  bottom:73px; width:144px; height:52px;
+  background: linear-gradient(180deg, #E8C6CC, #D3A9B2);
+  box-shadow: inset 0 -6px 12px rgba(100,60,75,0.2);
+}
+/* lelehan krim di atas tiap tingkat */
+.tier::before{
+  content:''; position:absolute; top:0; left:0; right:0; height:20px;
+  background:
+    linear-gradient(var(--cream), var(--cream)) top / 100% 7px no-repeat,
+    radial-gradient(circle at 50% 0, var(--cream) 8px, transparent 8.5px) 0 0 / 18px 17px repeat-x;
+}
+/* hiasan: titik emas di tingkat bawah, garis emas di tingkat atas */
+.tier.bottom::after{
+  content:''; position:absolute; left:10px; right:10px; top:38px; height:10px;
+  background: radial-gradient(circle, var(--gold) 2.5px, transparent 3px) center / 22px 10px repeat-x;
+  opacity:.85;
+}
+.tier.top::after{
+  content:''; position:absolute; left:0; right:0; bottom:12px; height:2px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+
+/* lilin */
+.candles{ position:absolute; bottom:125px; left:50%; transform:translateX(-50%); display:flex; gap:26px; align-items:flex-end; }
+.candle{
+  position:relative; width:9px; height:40px; border-radius:3px 3px 1px 1px;
+  background: repeating-linear-gradient(135deg, var(--cream) 0 5px, var(--blush) 5px 10px);
+  box-shadow: inset -2px 0 3px rgba(100,70,80,0.2);
+}
+.candle:nth-child(2){ height:46px; }
+.candle::before{ /* sumbu */
+  content:''; position:absolute; top:-6px; left:50%; width:1.5px; height:6px; transform:translateX(-50%);
+  background:#4A3A40; border-radius:1px;
+}
+.flame{
+  position:absolute; left:50%; bottom:calc(100% + 3px); width:12px; height:22px; margin-left:-6px;
+  border-radius:50% 50% 50% 50% / 62% 62% 38% 38%;
+  background: radial-gradient(ellipse at 50% 78%, #FFFBEA 0 18%, #FFD989 42%, rgba(255,160,90,0.9) 72%, transparent 74%);
+  box-shadow: 0 0 14px 4px rgba(255,205,120,0.5), 0 0 40px 12px rgba(255,190,100,0.18);
+  transform-origin:50% 90%;
+  animation: flicker 1.3s ease-in-out infinite alternate;
+  transition: opacity .35s ease, transform .35s ease;
+}
+.candle:nth-child(2) .flame{ animation-delay:-.4s; }
+.candle:nth-child(3) .flame{ animation-delay:-.8s; }
+@keyframes flicker{
+  0%{ transform:rotate(-3deg) scale(1, 1); }
+  50%{ transform:rotate(2deg) scale(.95, 1.08); }
+  100%{ transform:rotate(-1deg) scale(1.02, .94); }
+}
+.candle.out .flame{ opacity:0; transform:scale(.3, .2) translateY(8px); animation:none; }
+/* asap tipis setelah lilin padam */
+.smoke{
+  position:absolute; left:50%; bottom:calc(100% + 4px); width:6px; height:6px; margin-left:-3px;
+  border-radius:50%; background:rgba(235,225,220,0.55); filter:blur(2px); opacity:0; pointer-events:none;
+}
+.candle.out .smoke{ animation: smokeUp 2s ease-out forwards; }
+@keyframes smokeUp{
+  0%{ opacity:.75; transform:translate(0,0) scale(1); }
+  100%{ opacity:0; transform:translate(10px,-60px) scale(4.5); }
+}
+
+/* tombol tiup lilin */
+.cake-btn{
+  margin-top:22px;
+  background: linear-gradient(120deg, var(--gold), var(--blush)); color: var(--plum-deep); border:none; padding:16px 38px; border-radius:999px;
+  font-family:'Jost'; font-size:13px; letter-spacing:2px; text-transform:uppercase; font-weight:600; cursor:pointer;
+  box-shadow: 0 14px 34px rgba(212,175,106,0.25); transition: transform .25s ease, box-shadow .25s ease;
+}
+.cake-btn:hover{ transform: translateY(-3px); box-shadow: 0 18px 40px rgba(212,175,106,0.35); }
+.cake-btn:active{ transform: translateY(0) scale(.97); }
+
+/* ucapan setelah lilin ditiup */
+.cake-msg{
+  margin-top:16px; min-height:30px; max-width:420px; padding:0 10px;
+  font-family:'Cormorant Garamond', serif; font-style:italic; font-size:clamp(19px, 4.6vw, 24px);
+  color:var(--cream); text-shadow:0 2px 10px rgba(30,22,27,0.6);
+  opacity:0; transform:translateY(8px); filter:blur(3px);
+  transition: opacity 1s ease .5s, transform 1s ease .5s, filter 1s ease .5s;
+}
+.cake-msg.show{ opacity:1; transform:none; filter:blur(0); }
+
+/* ---------- efek kalem saat lilin ditiup ---------- */
+#burst{ position:fixed; inset:0; pointer-events:none; z-index:80; overflow:hidden; }
+
+/* cahaya hangat yang mengembang pelan */
+.cake-glow{
+  position:fixed; width:380px; height:380px; margin:-190px 0 0 -190px; border-radius:50%;
+  background: radial-gradient(circle, rgba(233,216,188,0.28), rgba(217,184,191,0.12) 40%, transparent 70%);
+  animation: glowBloom 1.8s ease-out both;
+}
+@keyframes glowBloom{
+  0%{ opacity:0; transform:scale(.4); }
+  30%{ opacity:1; }
+  100%{ opacity:0; transform:scale(1.2); }
+}
+
+/* hati & kilau kecil melayang naik, seperti lampion */
+.cake-heart{
+  position:fixed; transform:translate(-50%,-50%); line-height:1;
+  color:var(--gold-soft); text-shadow:0 0 8px rgba(214,185,140,0.6);
+  animation: heartRise 3s ease-out both;
+}
+@keyframes heartRise{
+  0%{ opacity:0; transform:translate(-50%,-50%) scale(.6); }
+  20%{ opacity:.95; }
+  100%{ opacity:0; transform:translate(calc(-50% + var(--drift)), calc(-50% + var(--rise))) scale(1); }
+}

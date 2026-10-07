@@ -1,0 +1,121 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 200">
+  <!-- kue tart 2 tingkat dengan 3 lilin; api lilin berkedip & bergoyang (animasi SMIL) -->
+  <defs>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#FFE9A8" stop-opacity=".9"/>
+      <stop offset="1" stop-color="#FFB347" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="tier1" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#F6DCE2"/>
+      <stop offset="1" stop-color="#E7BFC9"/>
+    </linearGradient>
+    <linearGradient id="tier2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#F7E6D2"/>
+      <stop offset="1" stop-color="#E8CBA8"/>
+    </linearGradient>
+    <!-- api: dasar api di titik (0,0) supaya skala/goyangan berporos di sumbu lilin -->
+    <g id="flame">
+      <path d="M0 -22 C7 -12 8 -4 0 0 C-8 -4 -7 -12 0 -22Z" fill="#FF9F43"/>
+      <path d="M0 -14 C4 -8 4.5 -3 0 0 C-4.5 -3 -4 -8 0 -14Z" fill="#FFE680"/>
+    </g>
+  </defs>
+
+  <!-- piring -->
+  <ellipse cx="80" cy="186" rx="74" ry="9" fill="#3A0F2C" opacity=".15"/>
+  <ellipse cx="80" cy="180" rx="72" ry="10" fill="#F4ECE6"/>
+  <ellipse cx="80" cy="177" rx="64" ry="7" fill="#FFFFFF"/>
+
+  <!-- tingkat bawah -->
+  <rect x="18" y="118" width="124" height="58" rx="12" fill="url(#tier1)"/>
+  <path d="M18 130 Q18 118 30 118 L130 118 Q142 118 142 130 L142 134 Q136 142 130 134 Q124 146 116 134 Q108 140 100 134 Q92 148 84 134 Q76 140 68 134 Q60 146 52 134 Q44 140 36 134 Q28 144 18 134Z" fill="#FFFFFF"/>
+  <g fill="#E58FA8">
+    <circle cx="34" cy="158" r="3"/><circle cx="56" cy="164" r="3"/><circle cx="80" cy="158" r="3"/><circle cx="104" cy="164" r="3"/><circle cx="126" cy="158" r="3"/>
+  </g>
+  <g stroke-width="3" stroke-linecap="round">
+    <path d="M44 150 l5 -3" stroke="#BFD8C2"/><path d="M68 150 l4 3" stroke="#F3C77A"/><path d="M92 150 l5 -2" stroke="#C9A0AE"/><path d="M116 150 l4 3" stroke="#BFD8C2"/>
+  </g>
+
+  <!-- tingkat atas -->
+  <rect x="38" y="78" width="84" height="44" rx="10" fill="url(#tier2)"/>
+  <path d="M38 88 Q38 78 48 78 L112 78 Q122 78 122 88 L122 92 Q116 100 110 92 Q104 102 96 92 Q88 98 80 92 Q72 102 64 92 Q56 98 50 92 Q44 100 38 92Z" fill="#FFFFFF"/>
+  <path transform="translate(80 108) scale(.75)" d="M0 6 C-6 0 -12 -2 -12 -7 C-12 -11 -8 -13 -5 -13 C-2 -13 0 -11 0 -9 C0 -11 2 -13 5 -13 C8 -13 12 -11 12 -7 C12 -2 6 0 0 6Z" fill="#E58FA8"/>
+
+  <!-- stroberi di pinggir tingkat atas -->
+  <g transform="translate(46 78) scale(.55)">
+    <path d="M0 -14 C14 -14 18 -2 12 10 C8 18 2 22 0 22 C-2 22 -8 18 -12 10 C-18 -2 -14 -14 0 -14Z" fill="#EF4F74"/>
+    <path d="M-10 -14 L-4 -10 L0 -19 L4 -10 L10 -14 L6 -7 L-6 -7Z" fill="#6DBF73"/>
+  </g>
+  <g transform="translate(114 78) scale(.55)">
+    <path d="M0 -14 C14 -14 18 -2 12 10 C8 18 2 22 0 22 C-2 22 -8 18 -12 10 C-18 -2 -14 -14 0 -14Z" fill="#EF4F74"/>
+    <path d="M-10 -14 L-4 -10 L0 -19 L4 -10 L10 -14 L6 -7 L-6 -7Z" fill="#6DBF73"/>
+  </g>
+
+  <!-- lilin -->
+  <g>
+    <rect x="58" y="48" width="9" height="32" rx="2" fill="#F7F0EA"/>
+    <path d="M58 54 l9 -4 M58 62 l9 -4 M58 70 l9 -4" stroke="#E58FA8" stroke-width="2.5"/>
+    <rect x="75.5" y="42" width="9" height="38" rx="2" fill="#F7F0EA"/>
+    <path d="M75.5 48 l9 -4 M75.5 56 l9 -4 M75.5 64 l9 -4 M75.5 72 l9 -4" stroke="#BFD8C2" stroke-width="2.5"/>
+    <rect x="93" y="48" width="9" height="32" rx="2" fill="#F7F0EA"/>
+    <path d="M93 54 l9 -4 M93 62 l9 -4 M93 70 l9 -4" stroke="#F3C77A" stroke-width="2.5"/>
+    <g stroke="#3A2A2A" stroke-width="1.6" stroke-linecap="round">
+      <path d="M62.5 48 v-4"/><path d="M80 42 v-4"/><path d="M97.5 48 v-4"/>
+    </g>
+  </g>
+
+  <!-- cahaya lilin (berdenyut) -->
+  <circle cx="62.5" cy="36" r="14" fill="url(#glow)">
+    <animate attributeName="opacity" values=".55;.95;.6;.85;.55" dur="1.3s" repeatCount="indefinite"/>
+    <animate attributeName="r" values="13;16;14;15;13" dur="1.3s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="80" cy="30" r="15" fill="url(#glow)">
+    <animate attributeName="opacity" values=".7;.5;.95;.6;.7" dur="1.1s" repeatCount="indefinite"/>
+    <animate attributeName="r" values="15;13;17;14;15" dur="1.1s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="97.5" cy="36" r="14" fill="url(#glow)">
+    <animate attributeName="opacity" values=".6;.9;.55;.95;.6" dur="1.5s" repeatCount="indefinite"/>
+    <animate attributeName="r" values="14;15;13;16;14" dur="1.5s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- api lilin: berkedip (scale) + bergoyang (skew) -->
+  <g transform="translate(62.5 44)">
+    <g>
+      <animateTransform attributeName="transform" type="skewX" values="0;7;-5;4;0" dur="1.2s" repeatCount="indefinite"/>
+      <g>
+        <animateTransform attributeName="transform" type="scale" values="1 1;.88 1.14;1.06 .92;.95 1.08;1 1" dur=".7s" repeatCount="indefinite"/>
+        <use href="#flame"/>
+      </g>
+    </g>
+  </g>
+  <g transform="translate(80 38)">
+    <g>
+      <animateTransform attributeName="transform" type="skewX" values="0;-6;5;-3;0" dur="1s" repeatCount="indefinite"/>
+      <g>
+        <animateTransform attributeName="transform" type="scale" values="1 1;1.05 .9;.9 1.15;1 1" dur=".6s" repeatCount="indefinite"/>
+        <use href="#flame"/>
+      </g>
+    </g>
+  </g>
+  <g transform="translate(97.5 44)">
+    <g>
+      <animateTransform attributeName="transform" type="skewX" values="0;5;-7;3;0" dur="1.35s" repeatCount="indefinite"/>
+      <g>
+        <animateTransform attributeName="transform" type="scale" values="1 1;.92 1.1;1.04 .94;.9 1.12;1 1" dur=".8s" repeatCount="indefinite"/>
+        <use href="#flame"/>
+      </g>
+    </g>
+  </g>
+
+  <!-- kilau kecil di sekitar kue -->
+  <g fill="#FFE0A8">
+    <path transform="translate(22 92) scale(.7)" d="M0 -8 L2 -2 L8 0 L2 2 L0 8 L-2 2 L-8 0 L-2 -2Z">
+      <animate attributeName="opacity" values="0;1;0" dur="1.8s" repeatCount="indefinite"/>
+    </path>
+    <path transform="translate(140 70) scale(.6)" d="M0 -8 L2 -2 L8 0 L2 2 L0 8 L-2 2 L-8 0 L-2 -2Z">
+      <animate attributeName="opacity" values="0;1;0" dur="1.8s" begin=".9s" repeatCount="indefinite"/>
+    </path>
+    <path transform="translate(132 112) scale(.5)" d="M0 -8 L2 -2 L8 0 L2 2 L0 8 L-2 2 L-8 0 L-2 -2Z">
+      <animate attributeName="opacity" values="0;1;0" dur="2.2s" begin=".4s" repeatCount="indefinite"/>
+    </path>
+  </g>
+</svg>

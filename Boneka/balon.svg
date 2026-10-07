@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 200">
+  <!-- balon hati pink -->
+  <defs>
+    <radialGradient id="b" cx="38%" cy="30%" r="75%">
+      <stop offset="0" stop-color="#FFB8D2"/>
+      <stop offset="1" stop-color="#E9497F"/>
+    </radialGradient>
+  </defs>
+  <path d="M60 104 C38 84 8 70 8 40 C8 20 24 8 40 8 C50 8 57 14 60 22 C63 14 70 8 80 8 C96 8 112 20 112 40 C112 70 82 84 60 104Z" fill="url(#b)"/>
+  <ellipse cx="34" cy="32" rx="9" ry="14" transform="rotate(-30 34 32)" fill="#fff" opacity=".45"/>
+  <path d="M56 104 L64 104 L60 112Z" fill="#E9497F"/>
+  <path d="M60 112 C50 130 70 142 58 160 C50 172 64 184 60 196" stroke="#FFE0A8" stroke-width="2" fill="none"/>
+</svg>

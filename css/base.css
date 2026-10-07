@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500;600&family=Caveat:wght@500;600&display=swap');
+
+:root{
+  /* tema kalem: mauve redup + krem keemasan lembut (boneka ala Lotso tetap ada, tapi pudar) */
+  --plum-deep:#3E3239;
+  --plum-mid:#5A4852;
+  --plum-soft:#7A6570;
+  --gold:#D6B98C;
+  --gold-soft:#E9D8BC;
+  --blush:#D9B8BF;
+  --cream:#F7F0EA;
+  --line: rgba(214,185,140,0.35);
+  --panel: rgba(52,40,47,0.72);
+
+  /* pola kalem: kepala Lotso, stroberi, hati, jejak kaki, kilau (file Boneka/pola-lotso.svg) */
+  --cute-pattern: url("../Boneka/pola-lotso.svg");
+  /* tekstur halus seperti kertas */
+  --grain: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1  0 0 0 0 .95  0 0 0 0 .9  .22 0 0 0 -.06'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+  --cute-bg:
+    var(--grain),
+    radial-gradient(ellipse at 12% 8%, rgba(217,184,191,0.22), transparent 50%),
+    radial-gradient(ellipse at 88% 92%, rgba(214,185,140,0.16), transparent 50%),
+    radial-gradient(ellipse at 50% 45%, rgba(52,40,47,0.4), transparent 70%),
+    var(--cute-pattern),
+    linear-gradient(165deg, #483A44, #5C4A56 48%, #4A3C48);
+  --cute-bg-size: 160px 160px, auto, auto, auto, 320px 320px, auto;
+}
+
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  background:var(--plum-deep);
+  color:var(--cream);
+  font-family:'Jost',sans-serif;
+  overflow-x:hidden;
+  min-height:100vh;
+  cursor:default;
+}
+
+::selection{ background:var(--gold); color:var(--plum-deep); }
+
+/* ---------- scroll progress ---------- */
+#progressBar{
+  position:fixed; top:0; left:0; height:3px; width:0%;
+  background:linear-gradient(90deg, var(--gold), var(--blush));
+  z-index:100; transition:width .1s linear;
+  box-shadow:0 0 8px rgba(212,175,106,0.6);
+}
+
+/* ---------- cursor sparkle ---------- */
+.sparkle{
+  position:fixed; z-index:95; pointer-events:none;
+  font-size:12px; color:var(--gold-soft);
+  animation: sparkleFade .9s ease-out forwards;
+}
+@keyframes sparkleFade{
+  0%{ opacity:1; transform:translate(-50%,-50%) scale(1) rotate(0deg); }
+  100%{ opacity:0; transform:translate(-50%,-50%) scale(0.3) rotate(90deg) translateY(-18px); }
+}
+
+/* ---------- musik + visualizer ---------- */
+#musicDock{
+  position:fixed; top:16px; right:16px; z-index:90;
+  display:flex; align-items:center; gap:10px;
+  padding:8px 14px 8px 10px; border-radius:999px;
+  border:1px solid var(--line); background:rgba(35,21,37,0.75);
+  backdrop-filter:blur(6px);
+  opacity:0; pointer-events:none; transition:opacity .5s ease;
+}
+#musicDock.show{ opacity:1; pointer-events:auto; }
+#muteBtn{
+  width:30px; height:30px; border-radius:50%; border:none;
+  background:linear-gradient(120deg, var(--gold), var(--blush));
+  color:var(--plum-deep); font-size:13px; cursor:pointer;
+  display:flex; align-items:center; justify-content:center;
+  transition: transform .2s ease;
+}
+#muteBtn:hover{ transform:scale(1.1); }
+#musicTitle{ font-size:10.5px; letter-spacing:1px; color:var(--gold-soft); opacity:.8; max-width:110px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+#visualizer{ display:flex; align-items:flex-end; gap:2px; height:16px; }
+#visualizer span{
+  width:3px; background:var(--gold-soft); border-radius:2px; height:4px;
+  transition:height .12s ease;
+}
+#musicDock.playing #visualizer span{ animation: bounceBar 1s ease-in-out infinite; }
+#visualizer span:nth-child(1){ animation-delay:0s; }
+#visualizer span:nth-child(2){ animation-delay:.15s; }
+#visualizer span:nth-child(3){ animation-delay:.3s; }
+#visualizer span:nth-child(4){ animation-delay:.1s; }
+@keyframes bounceBar{ 0%,100%{height:4px;} 50%{height:15px;} }
+
+/* ---------- ambient petals ---------- */
+#petals{ position:fixed; inset:0; pointer-events:none; z-index:5; overflow:hidden; }
+.petal{
+  position:absolute; top:-40px; font-size:14px; opacity:.55;
+  animation: fall linear infinite; color: var(--blush);
+  filter: drop-shadow(0 0 3px rgba(232,174,183,0.3));
+}
+@keyframes fall{
+  0%{ transform: translateY(-5vh) translateX(0) rotate(0deg); opacity:0;}
+  10%{opacity:.6;}
+  100%{ transform: translateY(105vh) translateX(40px) rotate(340deg); opacity:0;}
+}
+
+/* ---------- starfield (hero bg) ---------- */
+#stars{ position:absolute; inset:0; z-index:0; overflow:hidden; }
+.star{
+  position:absolute; width:2px; height:2px; background:var(--gold-soft);
+  border-radius:50%; animation: twinkle ease-in-out infinite;
+}
+@keyframes twinkle{ 0%,100%{opacity:.15;} 50%{opacity:.9;} }
+
