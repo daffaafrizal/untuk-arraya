@@ -16,11 +16,11 @@ const CONFIG = {
   pinHint: "petunjuk: tanggal jadian kita",
 
   // format MM-DD (bulan-tanggal) — tanggal lahir  dia, buat hitung mundur ultah berikutnya
-  birthdayMonthDay: "10-13",
+  birthdayMonthDay: "10-15",
 
   // amplop terkunci + hitung mundur sampai waktu ini (waktu lokal perangkat).
   // format "YYYY-MM-DDTHH:MM". Kosongkan ("") kalau mau langsung bisa dibuka.
-  unlockAt: "2026-10-13T00:00",
+  unlockAt: "2026-10-15T00:00",
 
   // nama file lagu, taruh file-nya di folder yang sama dengan index.html
   musicFile: "Music.mp3",
